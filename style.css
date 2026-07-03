@@ -1,0 +1,46 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+  overflow: hidden; /* dôležité */
+  background: black;
+}
+
+.viewport {
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  position: relative;
+
+  cursor: grab;
+  touch-action: none; /* dôležité pre smooth drag na mobile */
+}
+
+.viewport:active {
+  cursor: grabbing;
+}
+
+.track {
+  display: flex;
+  height: 100vh;
+  width: max-content;
+
+  transform: translateX(0px);
+  will-change: transform;
+
+  user-select: none;
+}
+
+.image {
+  height: 100vh;
+  width: auto;
+  flex-shrink: 0;
+
+  pointer-events: none;
+  user-select: none;
+}
